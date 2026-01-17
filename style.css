@@ -17,6 +17,7 @@ body {
     overflow-x: hidden;
 }
 
+
 .overlay {
     width: 100%;
     min-height: 100vh;
@@ -167,6 +168,11 @@ footer {
 
 /* RESPONSIVIDADE CELULAR */
 @media (max-width: 768px) {
+    body {
+        background-attachment: scroll;
+        /* REMOVE o bug */
+    }
+
     .fundo {
         margin-top: -30px;
     }
