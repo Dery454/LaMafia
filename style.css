@@ -6,7 +6,7 @@
 }
 
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: Arial, sans-serif;
     color: #fff;
     background-image: url('assets/background.jpeg');
     background-size: cover;
@@ -17,6 +17,7 @@ body {
     overflow-x: hidden;
 }
 
+/* OVERLAY */
 .overlay {
     width: 100%;
     min-height: 100vh;
@@ -44,7 +45,7 @@ body {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
 }
 
-/* TEXTOS ABAIXO DA LOGO */
+/* INFO DO EVENTO */
 .info-evento {
     margin-top: -120px;
     position: relative;
@@ -52,7 +53,7 @@ body {
     text-align: center;
 }
 
-/* PRÉVIA DE CARNAVAL */
+/* TÍTULO (Prévia de Carnaval) */
 .info-evento h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.2rem, 6vw, 3.4rem);
@@ -106,8 +107,9 @@ p {
     display: flex;
     gap: 16px;
     margin-top: 24px;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: nowrap;
+    /* mantém os botões lado a lado */
 }
 
 .btn-whats {
@@ -145,7 +147,7 @@ p {
     align-items: center;
 }
 
-/* O MANTO DE 2026 */
+/* TÍTULO (O Manto de 2026) */
 .titulo-secao {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.8rem;
@@ -184,6 +186,7 @@ footer {
 
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
+
     .fundo {
         margin-top: -30px;
     }
@@ -203,5 +206,22 @@ footer {
 
     .titulo-secao {
         font-size: 2rem;
+    }
+
+    /* BOTÕES WHATSAPP NO CELULAR */
+    .whats-buttons {
+        gap: 10px;
+    }
+
+    .btn-whats {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .icon-whats {
+        width: 22px;
+        height: 22px;
     }
 }
