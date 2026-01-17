@@ -1,122 +1,130 @@
-/* RESET */
+/* RESET PADRÃO */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* BASE */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     color: #fff;
-    background-color: #000;
-    overflow-x: hidden;
-}
-
-/* BACKGROUND PRINCIPAL */
-.overlay {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
     background-image: url('assets/background.jpeg');
     background-size: cover;
     background-position: center top;
     background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    overflow-x: hidden;
 }
 
-/* CONTAINER TOPO */
-.container {
+.overlay {
     width: 100%;
-    max-width: 1200px;
-    padding-bottom: 60px;
+    min-height: 100vh;
+    /* AJUSTE AQUI: 0.3 deixa o fundo bem mais claro que o 0.55 anterior */
+
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* LOGO */
+/* CONTAINER DO TOPO */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+/* LOGO GIGANTE E NO TOPO */
 .fundo {
     width: 95%;
     max-width: 900px;
+    height: auto;
     margin-top: -80px;
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
 }
 
-/* TEXTO DO EVENTO */
+/* TEXTOS ABAIXO DA LOGO */
 .info-evento {
     margin-top: -120px;
-    text-align: center;
+    position: relative;
     z-index: 5;
+    text-align: center;
 }
 
 h1 {
     font-size: clamp(1.8rem, 6vw, 3rem);
     text-transform: uppercase;
+    /* Aumentei a sombra para o texto não sumir no fundo claro */
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 1), 0 0 10px rgba(0, 0, 0, 0.8);
     letter-spacing: 2px;
-    text-shadow: 2px 2px 20px #000;
 }
 
 p {
     font-size: 1.3rem;
-    font-weight: bold;
     margin-top: 5px;
-    text-shadow: 1px 1px 15px #000;
+    font-weight: bold;
+    text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
 }
 
 /* CONTADOR */
 #contador {
     display: flex;
+    justify-content: center;
     gap: 15px;
     margin: 30px 0;
     flex-wrap: wrap;
-    justify-content: center;
 }
 
 .timer-box {
+    /* Fundo dos números um pouco mais sólido para contraste */
     background: rgba(15, 15, 30, 0.9);
     backdrop-filter: blur(10px);
     padding: 20px;
     border-radius: 15px;
     min-width: 100px;
-    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.7);
 }
 
 .timer-box span {
     font-size: 42px;
     font-weight: 900;
+    display: block;
+    line-height: 1;
 }
 
 .timer-box small {
     font-size: 12px;
-    color: #ccc;
     text-transform: uppercase;
+    color: #ccc;
 }
 
-/* BOTÃO */
+/* BOTÃO WHATSAPP */
 .btn {
+    display: inline-block;
     background: #25d366;
     color: #000;
     padding: 20px 45px;
     border-radius: 50px;
+    text-decoration: none;
     font-weight: 900;
     font-size: 1.2rem;
-    text-decoration: none;
     text-transform: uppercase;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
     transition: transform 0.3s ease;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
 }
 
 .btn:hover {
     transform: scale(1.05);
 }
 
-/* SEÇÃO CAMISA */
+/* SEÇÃO DA CAMISA */
 .secao-camisa {
     width: 100%;
+    background: transparent;
     padding: 100px 20px;
     display: flex;
     flex-direction: column;
@@ -127,30 +135,29 @@ p {
     font-size: 2.5rem;
     margin-bottom: 40px;
     text-transform: uppercase;
-    text-shadow: 2px 2px 20px #000;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 1);
 }
 
 .camisa-container {
     max-width: 700px;
     width: 100%;
-    text-align: center;
 }
 
 .img-camisa {
     width: 100%;
+    height: auto;
     border-radius: 30px;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
 }
 
 .legenda-camisa {
     margin-top: 25px;
-    font-size: 1.4rem;
     color: #25d366;
+    font-size: 1.4rem;
     font-weight: bold;
-    text-shadow: 2px 2px 15px #000;
+    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
 }
 
-/* FOOTER */
 footer {
     padding: 60px 20px;
     font-size: 0.9rem;
@@ -158,9 +165,8 @@ footer {
     text-shadow: 1px 1px 5px #000;
 }
 
-/* MOBILE */
+/* RESPONSIVIDADE CELULAR */
 @media (max-width: 768px) {
-
     .fundo {
         margin-top: -30px;
     }
@@ -180,9 +186,5 @@ footer {
 
     .titulo-secao {
         font-size: 1.8rem;
-    }
-
-    .secao-camisa {
-        padding: 60px 20px;
     }
 }
