@@ -177,22 +177,21 @@ footer {
 ========================= */
 @media (max-width: 768px) {
 
-    /* REMOVE background do body */
+    /* Remove fundo do body no mobile */
     body {
         background-image: none;
         background-attachment: scroll;
     }
 
-    /* BACKGROUND ESTÁVEL NO MOBILE */
+    /* Fundo completo, sem corte e sem zoom */
     .overlay {
         background-image: url('assets/background.jpeg');
         background-repeat: no-repeat;
-        background-position: top center;
-        background-size: 100% auto;
-        min-height: 100%;
+        background-position: center top;
+        background-size: cover;
+        min-height: 100vh;
     }
 
-    /* AJUSTES VISUAIS */
     .fundo {
         width: 80%;
         max-width: 280px;
