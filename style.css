@@ -34,7 +34,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-bottom: 0px;
+    padding-bottom: px;
 }
 
 /* LOGO GIGANTE E NO TOPO */
@@ -74,7 +74,7 @@ p {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 80px 0;
+    margin: 30px 0;
     flex-wrap: wrap;
 }
 
@@ -115,7 +115,6 @@ p {
     text-transform: uppercase;
     transition: transform 0.3s ease;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-
 }
 
 .btn:hover {
