@@ -21,7 +21,7 @@ body {
 .overlay {
     width: 100%;
     min-height: 100vh;
-    background: rgba(0, 0, 0, 0.55);
+    background: rgba(0, 0, 0, 0.3);
     /* Escurece o background para dar leitura */
     display: flex;
     flex-direction: column;
