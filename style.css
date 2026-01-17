@@ -164,27 +164,3 @@ footer {
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 1px 1px 5px #000;
 }
-
-/* RESPONSIVIDADE CELULAR */
-@media (max-width: 768px) {
-    .fundo {
-        margin-top: -30px;
-    }
-
-    .info-evento {
-        margin-top: -60px;
-    }
-
-    .timer-box {
-        min-width: 80px;
-        padding: 15px;
-    }
-
-    .timer-box span {
-        font-size: 30px;
-    }
-
-    .titulo-secao {
-        font-size: 1.8rem;
-    }
-}
