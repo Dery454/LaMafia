@@ -125,7 +125,7 @@ p {
 .secao-camisa {
     width: 100%;
     background: transparent;
-    padding: 100px 20px;
+    padding: 50px 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
