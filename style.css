@@ -188,3 +188,16 @@ footer {
         font-size: 1.8rem;
     }
 }
+
+.btn-whats {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.icon-whats {
+    width: 40px;
+    height: 40px;
+    ;
+
+}
