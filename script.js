@@ -1,70 +1,58 @@
-document.addEventListener("DOMContentLoaded", () => {
+/* =========================
+   CONTADOR
+========================= */
+const evento = new Date("2026-02-14T16:00:00-03:00").getTime();
 
-  /* ===============================
-     CONTADOR REGRESSIVO
-  =============================== */
+setInterval(() => {
+  const agora = new Date().getTime();
+  const diferenca = evento - agora;
 
-  const evento = new Date("2026-02-14T16:00:00-03:00").getTime();
+  if (diferenca <= 0) return;
 
-  const spanDias = document.getElementById("dias");
-  const spanHoras = document.getElementById("horas");
-  const spanMinutos = document.getElementById("minutos");
-  const spanSegundos = document.getElementById("segundos");
+  const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+  const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
+  const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
+  const segundos = Math.floor((diferenca / 1000) % 60);
 
-  function atualizarContador() {
-    const agora = new Date().getTime();
-    const diferenca = evento - agora;
+  document.getElementById("dias").innerText = dias;
+  document.getElementById("horas").innerText = horas;
+  document.getElementById("minutos").innerText = minutos;
+  document.getElementById("segundos").innerText = segundos;
+}, 1000);
 
-    if (diferenca <= 0) {
-      spanDias.innerText = "0";
-      spanHoras.innerText = "0";
-      spanMinutos.innerText = "0";
-      spanSegundos.innerText = "0";
-      return;
-    }
 
-    const dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
-    const horas = Math.floor((diferenca / (1000 * 60 * 60)) % 24);
-    const minutos = Math.floor((diferenca / (1000 * 60)) % 60);
-    const segundos = Math.floor((diferenca / 1000) % 60);
+/* =========================
+   LIGHTBOX GALERIA
+========================= */
+const fotos = document.querySelectorAll('.foto-card img');
+const lightbox = document.getElementById('lightbox');
+const lightboxImg = document.getElementById('lightbox-img');
+const closeBtn = document.getElementById('btn-fechar');
 
-    spanDias.innerText = dias;
-    spanHoras.innerText = horas;
-    spanMinutos.innerText = minutos;
-    spanSegundos.innerText = segundos;
-  }
-
-  atualizarContador();
-  setInterval(atualizarContador, 1000);
-
-  /* ===============================
-     LIGHTBOX DA GALERIA
-  =============================== */
-
-  const fotos = document.querySelectorAll(".foto-card img");
-  const lightbox = document.getElementById("lightbox");
-  const lightboxImg = document.getElementById("lightbox-img");
-  const closeBtn = document.querySelector(".lightbox-close");
-
-  if (fotos.length && lightbox && lightboxImg && closeBtn) {
-
-    fotos.forEach(img => {
-      img.addEventListener("click", () => {
-        lightboxImg.src = img.src;
-        lightbox.classList.add("active");
-      });
-    });
-
-    closeBtn.addEventListener("click", () => {
-      lightbox.classList.remove("active");
-    });
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        lightbox.classList.remove("active");
-      }
-    });
-
-  }
-
+/* ABRIR FOTO (FUNCIONA NO CELULAR) */
+fotos.forEach(img => {
+  img.addEventListener('pointerup', (e) => {
+    e.preventDefault();
+    lightboxImg.src = img.src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden'; // trava scroll
+  });
 });
+
+/* FECHAR NO X */
+closeBtn.addEventListener('click', () => {
+  fecharLightbox();
+});
+
+/* FECHAR TOCANDO FORA */
+lightbox.addEventListener('click', (e) => {
+  if (e.target === lightbox) {
+    fecharLightbox();
+  }
+});
+
+function fecharLightbox() {
+  lightbox.classList.remove('active');
+  lightboxImg.src = '';
+  document.body.style.overflow = '';
+}
