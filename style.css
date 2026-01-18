@@ -338,17 +338,27 @@ p {
     cursor: pointer;
 }
 
-/* RESPONSIVO */
+/* =========================
+   RESPONSIVIDADE MOBILE
+========================= */
 @media (max-width: 768px) {
 
+    /* AJUSTE FUNDO (corrige bug de scroll no mobile) */
+    body {
+        background-attachment: scroll;
+    }
+
+    /* LOGO */
     .fundo {
         margin-top: -30px;
     }
 
+    /* TEXTO DO EVENTO */
     .info-evento {
         margin-top: -60px;
     }
 
+    /* CONTADOR */
     .timer-box {
         min-width: 80px;
         padding: 15px;
@@ -358,10 +368,12 @@ p {
         font-size: 30px;
     }
 
+    /* TÍTULOS */
     .titulo-secao {
         font-size: 2rem;
     }
 
+    /* BOTÕES WHATSAPP */
     .btn-whats {
         padding: 8px 10px;
         font-size: 0.85rem;
@@ -372,6 +384,7 @@ p {
         height: 22px;
     }
 
+    /* GALERIA HORIZONTAL */
     .galeria-scroll {
         justify-content: flex-start;
         /* swipe natural no mobile */
