@@ -5,6 +5,7 @@
     box-sizing: border-box;
 }
 
+/* BODY */
 body {
     font-family: Arial, sans-serif;
     color: #fff;
@@ -24,6 +25,9 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    z-index: 1;
+    /* IMPORTANTE */
 }
 
 /* CONTAINER DO TOPO */
@@ -53,7 +57,7 @@ body {
     text-align: center;
 }
 
-/* TÍTULO (Prévia de Carnaval) */
+/* TÍTULO */
 .info-evento h1 {
     font-family: 'Bebas Neue', sans-serif;
     font-size: clamp(2.2rem, 6vw, 3.4rem);
@@ -96,9 +100,7 @@ p {
 .timer-box span {
     font-size: 42px;
     font-weight: 900;
-    display: block;
     line-height: 1;
-    width: 100%;
     text-align: center;
 }
 
@@ -108,147 +110,14 @@ p {
     color: #ccc;
 }
 
-/* BOTÕES WHATSAPP */
-.whats-buttons {
-    display: flex;
-    gap: 16px;
-    margin-top: 0px;
-    justify-content: center;
-    flex-wrap: nowrap;
-    /* mantém os botões lado a lado */
-}
-
-.btn-whats {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    padding: 18px 22px;
-    background-color: #25d366;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 40px;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
-}
-
-.btn-whats:hover {
-    transform: scale(1.05);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-}
-
-.icon-whats {
-    width: 32px;
-    height: 32px;
-}
-
-/* SEÇÃO DA CAMISA */
-.secao-camisa {
-    width: 100%;
-    background: transparent;
-    padding: 0px 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* TÍTULO (O Manto de 2026) */
-.titulo-secao {
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 2.8rem;
-    margin-top: -30px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 1);
-}
-
-.camisa-container {
-    max-width: 700px;
-    width: 100%;
-}
-
-.img-camisa {
-    width: 100%;
-    height: auto;
-    border-radius: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
-}
-
-.legenda-camisa {
-    margin-top: 25px;
-    color: #25d366;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 15px rgba(0, 0, 0, 0.8);
-}
-
-footer {
-    padding: 60px 20px;
-    font-size: 0.9rem;
-    color: rgba(255, 255, 255, 0.6);
-    text-shadow: 1px 1px 5px #000;
-}
-
-.poucas-unidades {
-    font-size: 0.75rem;
-    opacity: 0.75;
-}
-
-/* RESPONSIVIDADE */
-@media (max-width: 768px) {
-
-    .fundo {
-        margin-top: -30px;
-    }
-
-    .info-evento {
-        margin-top: -60px;
-    }
-
-    .timer-box {
-        min-width: 80px;
-        padding: 15px;
-    }
-
-    .timer-box span {
-        font-size: 30px;
-    }
-
-    .titulo-secao {
-        font-size: 2rem;
-    }
-
-    /* BOTÕES WHATSAPP NO CELULAR */
-    .whats-buttons {
-        gap: 10px;
-    }
-
-    .btn-whats {
-        padding: 8px 10px;
-        font-size: 0.85rem;
-        justify-content: center;
-        text-align: center;
-    }
-
-    .icon-whats {
-        width: 22px;
-        height: 22px;
-    }
-
-
-}
-
-/* QUADRO ÚNICO NEON */
+/* QUADRO INFORMAÇÕES */
 .info-quadro-unico {
     width: 90%;
     max-width: 700px;
-    margin-top: 0px;
+    margin-top: 0;
     padding: 18px 20px;
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.20);
-    /* fundo bem transparente */
     border: 2px solid rgba(255, 0, 255, 0.45);
     box-shadow: 0 0 25px rgba(255, 0, 255, 0.25);
     position: relative;
@@ -270,28 +139,62 @@ footer {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.6rem;
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 10px;
-    color: #fff;
-    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 .info-lista {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-
-    /* <-- alinha à esquerda */
     gap: 8px;
 }
 
 .info-lista p {
     font-size: 1.1rem;
     margin: 0;
-    font-weight: bold;
-    color: #fff;
 }
 
+/* SEÇÃO CAMISA */
+.secao-camisa {
+    width: 100%;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.titulo-secao {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.8rem;
+    margin-top: -30px;
+    margin-bottom: 20px;
+    letter-spacing: 3px;
+}
+
+.camisa-container {
+    max-width: 700px;
+    width: 100%;
+}
+
+.img-camisa {
+    width: 100%;
+    border-radius: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.legenda-camisa {
+    margin-top: 25px;
+    color: #25d366;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.poucas-unidades {
+    font-size: 0.75rem;
+    opacity: 0.75;
+}
+
+/* QUADRO COMEMORAÇÃO */
 /* QUADRO DO TEXTO COMEMORAÇÃO */
 .quadro-comemoracao {
     width: 90%;
@@ -327,7 +230,33 @@ footer {
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
-/* GALERIA HORIZONTAL */
+/* BOTÕES WHATS */
+.whats-buttons {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: nowrap;
+}
+
+.btn-whats {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 18px 22px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.icon-whats {
+    width: 32px;
+    height: 32px;
+}
+
+/* GALERIA */
 .galeria-horizontal {
     width: 100%;
     padding: 50px 20px;
@@ -338,54 +267,18 @@ footer {
     font-family: 'Bebas Neue', sans-serif;
     font-size: 2.2rem;
     margin-bottom: 25px;
-    letter-spacing: 3px;
-    text-transform: uppercase;
-    text-shadow: 2px 2px 20px rgba(0, 0, 0, 1);
 }
 
 .galeria-scroll {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-}
-
-.galeria-scroll img {
-    flex: 0 0 auto;
-    width: 260px;
-    height: 360px;
-    object-fit: cover;
-    border-radius: 20px;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
-    scroll-snap-align: center;
-    transition: transform 0.3s ease;
-}
-
-.galeria-scroll img:hover {
-    transform: scale(1.05);
-}
-
-/* REMOVE BARRA FEIA NO CHROME */
-.galeria-scroll::-webkit-scrollbar {
-    height: 6px;
-}
-
-.galeria-scroll {
-    display: flex;
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-
+    padding: 0 20px 10px;
     justify-content: center;
-    /* 👈 centraliza no desktop */
+    /* CENTRALIZA NO PC */
+    scroll-snap-type: x mandatory;
 }
 
-
-/* FOTO COM LEGENDA */
 .foto-card {
     position: relative;
     flex: 0 0 auto;
@@ -398,32 +291,20 @@ footer {
     object-fit: cover;
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease;
+    cursor: pointer;
 }
 
-.foto-card:hover img {
-    transform: scale(1.05);
-}
-
-/* ANO SOBRE A FOTO */
 .ano-foto {
     position: absolute;
     top: 12px;
     left: 12px;
     padding: 6px 14px;
     border-radius: 20px;
-    font-family: 'Bebas Neue', sans-serif;
-    font-size: 1.1rem;
-    letter-spacing: 2px;
-    color: #fff;
     background: rgba(0, 0, 0, 0.55);
-    backdrop-filter: blur(6px);
     border: 1px solid rgba(255, 0, 255, 0.6);
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
-    text-shadow: 0 0 10px rgba(255, 0, 255, 0.9);
 }
 
-/* LIGHTBOX (EXPANDIR FOTO) */
+/* LIGHTBOX */
 .lightbox {
     position: fixed;
     inset: 0;
@@ -434,7 +315,8 @@ footer {
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s ease;
-    z-index: 9999;
+    z-index: 999999;
+    /* CHAVE DO PROBLEMA */
 }
 
 .lightbox.active {
@@ -446,8 +328,6 @@ footer {
     max-width: 90%;
     max-height: 90%;
     border-radius: 20px;
-    box-shadow: 0 0 40px rgba(255, 0, 255, 0.4);
-    animation: zoomIn 0.3s ease;
 }
 
 .lightbox-close {
@@ -455,24 +335,45 @@ footer {
     top: 20px;
     right: 25px;
     font-size: 40px;
-    color: #fff;
     cursor: pointer;
-    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
 }
 
-@keyframes zoomIn {
-    from {
-        transform: scale(0.8);
-        opacity: 0;
+/* RESPONSIVO */
+@media (max-width: 768px) {
+
+    .fundo {
+        margin-top: -30px;
     }
 
-    to {
-        transform: scale(1);
-        opacity: 1;
+    .info-evento {
+        margin-top: -60px;
     }
-}
 
-/* deixa claro que a foto é clicável */
-.foto-card img {
-    cursor: pointer;
+    .timer-box {
+        min-width: 80px;
+        padding: 15px;
+    }
+
+    .timer-box span {
+        font-size: 30px;
+    }
+
+    .titulo-secao {
+        font-size: 2rem;
+    }
+
+    .btn-whats {
+        padding: 8px 10px;
+        font-size: 0.85rem;
+    }
+
+    .icon-whats {
+        width: 22px;
+        height: 22px;
+    }
+
+    .galeria-scroll {
+        justify-content: flex-start;
+        /* swipe natural no mobile */
+    }
 }
