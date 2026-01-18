@@ -372,10 +372,18 @@ footer {
     height: 6px;
 }
 
-.galeria-scroll::-webkit-scrollbar-thumb {
-    background: rgba(255, 255, 255, 0.3);
-    border-radius: 10px;
+.galeria-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+
+    justify-content: center;
+    /* 👈 centraliza no desktop */
 }
+
 
 /* FOTO COM LEGENDA */
 .foto-card {
@@ -413,4 +421,58 @@ footer {
     border: 1px solid rgba(255, 0, 255, 0.6);
     box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
     text-shadow: 0 0 10px rgba(255, 0, 255, 0.9);
+}
+
+/* LIGHTBOX (EXPANDIR FOTO) */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+    z-index: 9999;
+}
+
+.lightbox.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox-img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.4);
+    animation: zoomIn 0.3s ease;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 40px;
+    color: #fff;
+    cursor: pointer;
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* deixa claro que a foto é clicável */
+.foto-card img {
+    cursor: pointer;
 }
