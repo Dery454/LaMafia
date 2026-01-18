@@ -273,11 +273,13 @@ p {
     display: flex;
     gap: 20px;
     overflow-x: auto;
-    padding: 0 20px 10px;
+    padding-bottom: 10px;
     justify-content: center;
-    /* CENTRALIZA NO PC */
+    /* desktop */
     scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
 }
+
 
 .foto-card {
     position: relative;
@@ -343,22 +345,18 @@ p {
 ========================= */
 @media (max-width: 768px) {
 
-    /* AJUSTE FUNDO (corrige bug de scroll no mobile) */
     body {
         background-attachment: scroll;
     }
 
-    /* LOGO */
     .fundo {
         margin-top: -30px;
     }
 
-    /* TEXTO DO EVENTO */
     .info-evento {
         margin-top: -60px;
     }
 
-    /* CONTADOR */
     .timer-box {
         min-width: 80px;
         padding: 15px;
@@ -368,12 +366,10 @@ p {
         font-size: 30px;
     }
 
-    /* TÍTULOS */
     .titulo-secao {
         font-size: 2rem;
     }
 
-    /* BOTÕES WHATSAPP */
     .btn-whats {
         padding: 8px 10px;
         font-size: 0.85rem;
@@ -384,9 +380,19 @@ p {
         height: 22px;
     }
 
-    /* GALERIA HORIZONTAL */
+    /* 🔥 CORREÇÃO DEFINITIVA DA GALERIA NO MOBILE */
     .galeria-scroll {
         justify-content: flex-start;
-        /* swipe natural no mobile */
+        /* começa da primeira */
+        padding-left: 20px;
+        /* respiro visual */
+        padding-right: 20px;
+        scroll-snap-type: x proximity;
+        /* NÃO força pular */
+    }
+
+    .foto-card {
+        scroll-snap-align: start;
+        /* primeira foto fixa corretamente */
     }
 }
