@@ -31,13 +31,14 @@ const closeBtn = document.getElementById('btn-fechar');
 
 /* ABRIR FOTO (FUNCIONA NO CELULAR) */
 fotos.forEach(img => {
-  img.addEventListener('pointerup', (e) => {
+  img.addEventListener('click', (e) => {
     e.preventDefault();
     lightboxImg.src = img.src;
     lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // trava scroll
+    document.body.style.overflow = 'hidden';
   });
 });
+
 
 /* FECHAR NO X */
 closeBtn.addEventListener('click', () => {
@@ -53,6 +54,6 @@ lightbox.addEventListener('click', (e) => {
 
 function fecharLightbox() {
   lightbox.classList.remove('active');
-  lightboxImg.src = '';
   document.body.style.overflow = '';
 }
+
