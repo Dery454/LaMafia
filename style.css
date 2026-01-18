@@ -64,7 +64,7 @@ body {
 }
 
 p {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     margin-top: 5px;
     font-weight: bold;
     text-shadow: 1px 1px 15px rgba(0, 0, 0, 1);
@@ -122,7 +122,7 @@ p {
     display: inline-flex;
     align-items: center;
     gap: 12px;
-    padding: 0px 22px;
+    padding: 18px 22px;
     background-color: #25d366;
     color: #fff;
     text-decoration: none;
@@ -189,6 +189,11 @@ footer {
     font-size: 0.9rem;
     color: rgba(255, 255, 255, 0.6);
     text-shadow: 1px 1px 5px #000;
+}
+
+.poucas-unidades {
+    font-size: 0.75rem;
+    opacity: 0.75;
 }
 
 /* RESPONSIVIDADE */
@@ -320,4 +325,92 @@ footer {
     margin-bottom: 10px;
     color: #fff;
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+}
+
+/* GALERIA HORIZONTAL */
+.galeria-horizontal {
+    width: 100%;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.titulo-galeria {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2.2rem;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 20px rgba(0, 0, 0, 1);
+}
+
+.galeria-scroll {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+}
+
+.galeria-scroll img {
+    flex: 0 0 auto;
+    width: 260px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    scroll-snap-align: center;
+    transition: transform 0.3s ease;
+}
+
+.galeria-scroll img:hover {
+    transform: scale(1.05);
+}
+
+/* REMOVE BARRA FEIA NO CHROME */
+.galeria-scroll::-webkit-scrollbar {
+    height: 6px;
+}
+
+.galeria-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+/* FOTO COM LEGENDA */
+.foto-card {
+    position: relative;
+    flex: 0 0 auto;
+    scroll-snap-align: center;
+}
+
+.foto-card img {
+    width: 260px;
+    height: 360px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease;
+}
+
+.foto-card:hover img {
+    transform: scale(1.05);
+}
+
+/* ANO SOBRE A FOTO */
+.ano-foto {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255, 0, 255, 0.6);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.6);
+    text-shadow: 0 0 10px rgba(255, 0, 255, 0.9);
 }
