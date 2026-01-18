@@ -27,7 +27,6 @@ body {
     align-items: center;
     position: relative;
     z-index: 1;
-    /* IMPORTANTE */
 }
 
 /* CONTAINER DO TOPO */
@@ -195,7 +194,6 @@ p {
 }
 
 /* QUADRO COMEMORAÇÃO */
-/* QUADRO DO TEXTO COMEMORAÇÃO */
 .quadro-comemoracao {
     width: 90%;
     max-width: 700px;
@@ -203,7 +201,6 @@ p {
     padding: 18px 20px;
     border-radius: 20px;
     background: rgba(0, 0, 0, 0.20);
-    /* fundo bem transparente */
     border: 2px solid rgba(255, 0, 255, 0.45);
     box-shadow: 0 0 25px rgba(255, 0, 255, 0.25);
     position: relative;
@@ -275,14 +272,10 @@ p {
     overflow-x: auto;
     padding-bottom: 10px;
     justify-content: flex-start;
-    /* 🔥 */
     padding-left: 20px;
-    /* 🔥 garante ver a 1ª foto */
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch;
 }
-
-
 
 .foto-card {
     position: relative;
@@ -297,6 +290,8 @@ p {
     border-radius: 20px;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.8);
     cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
 }
 
 .ano-foto {
@@ -321,7 +316,6 @@ p {
     pointer-events: none;
     transition: opacity 0.3s ease;
     z-index: 999999;
-    /* CHAVE DO PROBLEMA */
 }
 
 .lightbox.active {
@@ -329,10 +323,17 @@ p {
     pointer-events: auto;
 }
 
+/* 🔥 AJUSTE CRÍTICO */
 .lightbox-img {
     max-width: 90%;
     max-height: 90%;
     border-radius: 20px;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.lightbox.active .lightbox-img {
+    opacity: 1;
 }
 
 .lightbox-close {
@@ -383,21 +384,11 @@ p {
         height: 22px;
     }
 
-    /* 🔥 CORREÇÃO DEFINITIVA DA GALERIA NO MOBILE */
     .galeria-scroll {
         justify-content: flex-start;
-        /* começa da primeira */
         padding-left: 20px;
-        /* respiro visual */
         padding-right: 20px;
         scroll-snap-type: x proximity;
-        /* NÃO força pular */
-    }
-
-    .foto-card img {
-        touch-action: manipulation;
-        /* 🔥 */
-        user-select: none;
     }
 
     footer {
@@ -407,9 +398,7 @@ p {
 
     footer p {
         font-size: 0.75rem;
-        /* 🔥 menor no celular */
         line-height: 1.4;
-        text-align: center;
         margin: 0 auto;
         opacity: 0.7;
     }
